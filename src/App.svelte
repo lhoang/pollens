@@ -1,7 +1,8 @@
-<h1>Cats of YouTube</h1>
+<script>
+import Viz from './viz/Viz.svelte';
+export let data = [];
+</script>
 
-<ul>
-	{#each cats as cat}
-		<li><a target="_blank" href={cat.video}>{cat.name}</a></li>
-	{/each}
-</ul>
+<h1>Technozaure Zebra</h1>
+<Viz height="300" width="500" data="{data}"></Viz>
+

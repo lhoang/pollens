@@ -2,6 +2,8 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import json from 'rollup-plugin-json';
+
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -29,6 +31,7 @@ export default {
 		// some cases you'll need additional configuration 
 		// consult the documentation for details:
 		// https://github.com/rollup/rollup-plugin-commonjs
+		json(),
 		resolve(),
 		commonjs(),
 
