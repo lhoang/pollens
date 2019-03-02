@@ -4,14 +4,13 @@ import {line} from 'd3-shape';
 import {axisBottom, axisLeft} from 'd3-axis';
 import {timeFormat, timeParse} from 'd3-time-format';
 import {select} from 'd3-selection';
-import {beforeUpdate, afterUpdate} from 'svelte';
+import {afterUpdate} from 'svelte';
 
 export let data = {};
 export let width = 650;
 export let height = 400;
 const margin = {top: 20, right: 5, bottom: 20, left: 35};
 const red = '#eb6a5b';
-const blue = '#52b6ca';
 
 let cleanedData = [];
 

@@ -9,9 +9,7 @@ selectData();
 </script>
 
 <h1>Technozaure Zebra</h1>
-<select name="index" id="index" bind:value={index}
-on:click="{selectData}"
->
+<select name="index" id="index" bind:value={index} on:click="{selectData}">
     {#each datasets as {city, pollen, year}, i}
     <option value="{i}">{city} - {pollen} - {year}</option>
     {/each}

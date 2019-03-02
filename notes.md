@@ -17,6 +17,7 @@ https://svelte.technology/guide#getting-started
  * Composant
  * Debug avec `{@debug}`
  * Two-Way binding avec `bind:value` pour le `<select>`
+ * afterUpdate()
 
 
 Svelte v3 Beta :
