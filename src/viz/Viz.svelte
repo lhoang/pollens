@@ -4,16 +4,16 @@ import {line} from 'd3-shape';
 import {axisBottom, axisLeft} from 'd3-axis';
 import {timeFormat, timeParse} from 'd3-time-format';
 import {select} from 'd3-selection';
-import {afterUpdate} from 'svelte';
+import {beforeUpdate, afterUpdate} from 'svelte';
 
-export let data = [];
+export let data = {};
 export let width = 650;
 export let height = 400;
 const margin = {top: 20, right: 5, bottom: 20, left: 35};
 const red = '#eb6a5b';
 const blue = '#52b6ca';
 
-let cleanedData = data.sort((a,b) => a.date - b.date);
+let cleanedData = [];
 
 const xScale = scaleTime()
                 .domain([new Date(2000, 0, 1), new Date(2000, 11, 31)])
@@ -39,17 +39,18 @@ const format = timeFormat("%d-%m-2000");
 const path = line().x(d => xScale(getDay(d.date)))
                    .y(d => yScale(d.level));
 
-
 afterUpdate(() => {
     select('g[ref="xAxis"]').call(xAxis);
     select('g[ref="yAxis"]').call(yAxis);
+    cleanedData = data.hasOwnProperty('data')
+                      ? data.data.sort((a,b) => a.date - b.date)
+                      : [];
 });
 
 
 </script>
 
-
-<h2>Pollens</h2>
+<h2>Pollens de {data.pollen} à {data.city}</h2>
 <svg width={width} height={height}>
         <path d='{path(cleanedData)}' fill='none' stroke={red} strokeWidth='2' />
         <g>

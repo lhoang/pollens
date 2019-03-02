@@ -15,11 +15,14 @@
 https://svelte.technology/guide#getting-started
 
  * Composant
- * computed et helpers, fonctions pures
+ * Debug avec `{@debug}`
+ * Two-Way binding avec `bind:value` pour le `<select>`
 
 
 Svelte v3 Beta :
 https://v3.svelte.technology/guide
+
+
 
 ## D3
 Importer un module avec {}
