@@ -1,0 +1,8 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+}
+.group-viz {
+    display: flex;
+    flex-wrap: wrap;
+}

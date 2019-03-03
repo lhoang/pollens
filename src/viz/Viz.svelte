@@ -45,15 +45,14 @@ afterUpdate(() => {
                       ? data.data.sort((a,b) => a.date - b.date)
                       : [];
 });
-
-
 </script>
-
-<h2>Pollens de {data.pollen} à {data.city}</h2>
-<svg width={width} height={height}>
-        <path d='{path(cleanedData)}' fill='none' stroke={red} strokeWidth='2' />
-        <g>
-          <g ref='xAxis' transform={`translate(0, ${height - margin.bottom})`} />
-          <g ref='yAxis' transform={`translate(${margin.left}, 0)`} />
-        </g>
-</svg>
+<div>
+    <h2>Pollens de {data.pollen} à {data.city} ({data.year})</h2>
+    <svg width={width} height={height}>
+            <path d='{path(cleanedData)}' fill='none' stroke={red} strokeWidth='2' />
+            <g>
+              <g ref='xAxis' transform={`translate(0, ${height - margin.bottom})`} />
+              <g ref='yAxis' transform={`translate(${margin.left}, 0)`} />
+            </g>
+    </svg>
+</div>

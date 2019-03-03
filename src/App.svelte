@@ -1,5 +1,6 @@
 <script>
 import Viz from './viz/Viz.svelte';
+import CircularViz from './viz/VizCircular.svelte';
 export let datasets = [];
 
 let index = 0;
@@ -14,5 +15,9 @@ selectData();
     <option value="{i}">{city} - {pollen} - {year}</option>
     {/each}
 </select>
-<Viz height="300" width="500" data="{currentdata}"></Viz>
+<div class="group-viz">
+    <Viz height="300" width="500" data="{currentdata}"></Viz>
+    <CircularViz width="300" data="{currentdata}"></CircularViz>
+</div>
+
 
